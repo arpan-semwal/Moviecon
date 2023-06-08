@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const HomeSlice = createSlice({
-  name: 'Home',
+export const homeSlice = createSlice({
+  name: 'home',
   initialState: {
-    url : {} ,
+    url : {name: "js"} ,
     genres:{},
   },
   reducers: {
@@ -17,6 +17,6 @@ export const HomeSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { getApiConfiguration , getGenres } = HomeSlice.actions
+export const { getApiConfiguration , getGenres } = homeSlice.actions
 
-export default HomeSlice.reducer
+export default homeSlice.reducer
