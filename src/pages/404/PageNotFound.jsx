@@ -1,11 +1,11 @@
 import React from 'react'
 import "./style.scss";
-const Header = () => {
+const PageNotFound = () => {
   return (
     <div>
-      Header
+      Page
     </div>
   )
 }
 
-export default Header
+export default PageNotFound;

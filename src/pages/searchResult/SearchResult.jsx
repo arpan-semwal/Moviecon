@@ -1,11 +1,11 @@
 import React from 'react'
 import "./style.scss";
-const Header = () => {
+const SearchResult = () => {
   return (
     <div>
-      Header
+      SearchResult
     </div>
   )
 }
 
-export default Header
+export default SearchResult

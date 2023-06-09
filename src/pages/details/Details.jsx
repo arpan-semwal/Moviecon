@@ -1,11 +1,12 @@
 import React from 'react'
 import "./style.scss";
-const Header = () => {
+const Details = () => {
   return (
     <div>
-      Header
+      Details
+
     </div>
   )
 }
 
-export default Header
+export default Details
