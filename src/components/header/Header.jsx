@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-// import logo from "../../assets/popcorn.png";
+import logo from "../../assets/popcorn.png";
 
 const Header = () => {
     const [show, setShow] = useState("top"); // creating scrolling effect of menu ,  default value is top . 
@@ -22,7 +22,7 @@ const Header = () => {
         <Header>
             <ContentWrapper>
                 <div className="logo">
-                    {/* <img src={logo} alt = ""/> */}
+                    <img src={logo} alt = ""/>
                 </div>
             </ContentWrapper>
         </Header>
