@@ -5,26 +5,26 @@ import useFetch from '../../../hooks/useFetch'
 import Carousel from '../../../components/carousel/Carousel'
 
 
-const Trending = () => {
-  const [endpoint , setEndpoint] = useState("day");
-  const {data , loading} = useFetch(`/trending/all/${endpoint}`);
+const Popular = () => {
+  const [endpoint , setEndpoint] = useState("movie");
+  const {data , loading} = useFetch(`/${endpoint}/popular`);
 
   const onTapChange = (tab) => {
-    setEndpoint(tab === "Day" ? "day" : "week");
+    setEndpoint(tab === "Movies" ? "movie" : "tv");
   }
 
 
   return (
     <div className="carouselSection">
         <ContentWrapper>
-            <span className="carouselTitle">Trending</span>
-            <SwitchTabs data = {["Day" , "Week"]} onTapChange={onTapChange}/>
+            <span className="carouselTitle">Popular</span>
+            <SwitchTabs data = {["Movies" , "TV Shows"]} onTapChange={onTapChange}/>
         </ContentWrapper>
         {/* passing data and loading */}
-      <Carousel data={data?.results} loading={loading} />
+      <Carousel data={data?.results} loading={loading}  endpoint={endpoint}/>
 
     </div>
   )
 }
 
-export default Trending
+export default Popular
