@@ -19,7 +19,7 @@ const Header = () => {
   
   useEffect (() => {
         window.scrollTo(0 , 0); //the scroll will start from the top
-  } , location)
+  } , [location])
 
   const controlNavbar = () => {   //to control the transition of the navbar after 200 it will hide
     
