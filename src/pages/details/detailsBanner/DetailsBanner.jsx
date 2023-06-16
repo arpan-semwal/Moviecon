@@ -29,9 +29,10 @@ const DetailsBanner = ({ video, crew }) => {
         <div className="detailsBanner">
             {!loading ? (
                 <div> 
-                    <div className="backdrop-img">
+                    {/* <div className="backdrop-img">
                         <Img src={URL.backdrop+data.backdrop_path}/>
-                    </div>
+                    </div> */}
+                    detsils
                 </div>
             ) : (
                 <div className="detailsBannerSkeleton">
