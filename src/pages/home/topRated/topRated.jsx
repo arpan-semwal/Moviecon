@@ -18,10 +18,10 @@ const TopRated = () => {
     <div className="carouselSection">
         <ContentWrapper>
             <span className="carouselTitle">TopRated</span>
-            <SwitchTabs data = {["Movies" , "tv"]} onTapChange={onTapChange}/>
+            <SwitchTabs data = {["Movies" , "TV Shows"]} onTapChange={onTapChange}/>
         </ContentWrapper>
         {/* passing data and loading */}
-      <Carousel data={data?.results} loading={loading} />
+      <Carousel data={data?.results} loading={loading}  endpoint={endpoint}/>
 
     </div>
   )
