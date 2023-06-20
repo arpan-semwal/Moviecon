@@ -83,7 +83,7 @@ const navigationHandler = (type) => { // fucntion to define path , when we will 
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
-        <div className="logo">
+        <div className="logo"onClick={() =>  navigate("/")}>
           <img src={logo} alt="Popcorn" />
         </div>
 
