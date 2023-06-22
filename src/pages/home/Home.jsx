@@ -3,7 +3,7 @@ import "./style.scss";
 import HeroBanner from './heroBanner/HeroBanner';
 import Trending from './trending/trending';
 import Popular from './popular/Popular';
-import TopRated from './topRated/topRated';
+import TopRated from './topRated/TopRated';
 
 
 
