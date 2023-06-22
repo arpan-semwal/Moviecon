@@ -28,20 +28,27 @@ const SearchResult = () => {
 
   const fetchNextPageData = () => {
     setLoading(true);
-    fetchDatafromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
+    const nextPageNum = pageNum + 1; // Increment the pageNum
+    fetchDatafromApi(`/search/multi?query=${query}&page=${nextPageNum}`).then(
       (res) => {
-        if (data?.results) {
-          setData({
-            ...data,
-            results: [...data?.results, ...res.results],
-          });
-        } else {
-          setData(res);
-        }
-        setPageNum((prev) => prev + 1);
+        setData((prevData) => {
+          if (prevData?.results) {
+            return {
+              ...prevData,
+              results: [...prevData.results, ...res.results],
+            };
+          } else {
+            return res;
+          }
+        });
+        setPageNum(nextPageNum); // Update the pageNum
+        setLoading(false);
       }
     );
   };
+  
+  
+  
 
   useEffect(() => {
     fetchInitialData();
@@ -62,11 +69,14 @@ const SearchResult = () => {
 
 
 
-              <InfiniteScroll className="content" dataLength={data.results.length || []} next={fetchNextPageData}
-              hasMore={pageNum <= data?.total_pages}
-              loader={<Spinner/>}
-              >
-                {data?.results.map((item , index) => {
+              <InfiniteScroll
+  className="content"
+  dataLength={data?.results?.length}
+  next={fetchNextPageData}
+  hasMore={pageNum <= data?.total_pages}
+  loader={<Spinner />}
+>
+                {data?.results?.map((item , index) => {
                   if(item.media_Type === "person") return;
                   return (
                     <MovieCard key={index} data={item} fromSearch={true}/>
