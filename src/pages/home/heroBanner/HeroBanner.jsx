@@ -51,9 +51,7 @@ const HeroBanner = () => {
         <ContentWrapper>
         <div className="heroBannerContent">
             <span className="title">Welcome .</span>
-            <span className="subTitle">Millins of movies , Tv shows and people to discover. 
-                Explore Now 
-            </span>
+            <span className="subTitle">Millins of movies , Tv shows and people to discover.</span>
             <div className="searchInput">
                 <input 
                 type="text"
